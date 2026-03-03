@@ -188,10 +188,26 @@ function changeScore(player, amount) {
 // 重新一局
 // --------------------
 function resetGame() {
-  players.value = []
-  localStorage.removeItem("players")
-  results.value = []
-  settleMode.value = false
+  ElMessageBox.confirm(
+    '真的要重新开始吗？',
+    '提示',
+    {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning',
+      distinguishCancelAndClose: true, // 点击遮罩不当作取消
+    }
+  )
+    .then(() => {
+      // 用户点击“确定”，才执行重置
+      players.value = []
+      localStorage.removeItem('players')
+      results.value = []
+      settleMode.value = false
+    })
+    .catch(() => {
+      // 用户点击取消或关闭，什么都不做
+    })
 }
 
 // --------------------
