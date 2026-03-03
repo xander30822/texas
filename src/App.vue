@@ -130,6 +130,8 @@ const defaultPlayers = [
   "小Q",
   "Motor",
   "Azu",
+  "Jax",
+  "Louis"
 ]
 
 // 读取 localStorage
@@ -199,8 +201,8 @@ const settleMode = ref(false)
 const results = ref([])
 
 // 默认汇率
-const moneyPerUnit = ref(10)
-const pointsPerUnit = ref(1000)
+const moneyPerUnit = ref(20)
+const pointsPerUnit = ref(2000)
 
 // 开始结算
 function startSettle() {
